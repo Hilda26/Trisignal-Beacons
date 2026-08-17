@@ -1,0 +1,74 @@
+.tri-signal-spinner {
+  --tri-size: 24px;
+  --tri-duration: 1.44s;
+  width: var(--tri-size);
+  height: var(--tri-size);
+  display: inline-block;
+  overflow: visible;
+  color: currentColor;
+}
+
+.tri-signal-spinner .tri-mark { fill: currentColor; }
+
+.tri-signal-spinner .tri-core {
+  transform-box: view-box;
+  transform-origin: 200.33px 247.84px;
+  animation: tri-core-confirm var(--tri-duration) cubic-bezier(.45,0,.55,1) infinite;
+  will-change: transform, opacity;
+}
+
+.tri-signal-spinner .tri-cut {
+  fill: none;
+  stroke: #000;
+  stroke-width: 15;
+  stroke-linecap: round;
+  stroke-dasharray: 24 220;
+  opacity: .95;
+}
+
+.tri-signal-spinner .tri-cut-a { animation: tri-a var(--tri-duration) linear infinite; }
+.tri-signal-spinner .tri-cut-b { animation: tri-b var(--tri-duration) linear infinite; }
+.tri-signal-spinner .tri-cut-c { animation: tri-c var(--tri-duration) linear infinite; }
+
+@keyframes tri-a {
+  0% { stroke-dashoffset: 250; opacity: 0; }
+  5% { opacity: .95; }
+  26% { stroke-dashoffset: 12; opacity: .95; }
+  31%,100% { stroke-dashoffset: 12; opacity: 0; }
+}
+
+@keyframes tri-b {
+  0%,24% { stroke-dashoffset: 250; opacity: 0; }
+  29% { opacity: .95; }
+  50% { stroke-dashoffset: 12; opacity: .95; }
+  55%,100% { stroke-dashoffset: 12; opacity: 0; }
+}
+
+@keyframes tri-c {
+  0%,48% { stroke-dashoffset: 250; opacity: 0; }
+  53% { opacity: .95; }
+  74% { stroke-dashoffset: 12; opacity: .95; }
+  79%,100% { stroke-dashoffset: 12; opacity: 0; }
+}
+
+@keyframes tri-core-confirm {
+  0%,72%,100% { transform: scale(1); opacity: 1; }
+  82% { transform: scale(1.13); opacity: 1; }
+  90% { transform: scale(.97); opacity: .92; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tri-signal-spinner .tri-cut {
+    animation: none !important;
+    opacity: 0;
+  }
+
+  .tri-signal-spinner .tri-core {
+    animation: tri-reduced 1.8s ease-in-out infinite;
+  }
+
+  @keyframes tri-reduced {
+    0%,100% { opacity: .78; }
+    50% { opacity: 1; }
+  }
+}

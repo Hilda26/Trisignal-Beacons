@@ -1,0 +1,19 @@
+{
+  "name": "genlayer-tri-signal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tri-Signal: three inward signal cuts through the GenLayer mark.",
+  "license": "MIT",
+  "scripts": {
+    "test": "node checks/verify.mjs",
+    "check": "node checks/verify.mjs"
+  },
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "peerDependenciesMeta": {
+    "react": {
+      "optional": true
+    }
+  }
+}
