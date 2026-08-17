@@ -76,7 +76,7 @@ They are byte-identical.
 SHA-256:
 
 ```text
-abee7b7f0d6854e35009f40fcee97364bc7deb0291760f1ff84c2ef9f667019d
+dbe3f4633e6c6a77e97fc246bd82b89415e45a1f5e07fddbfe6ab889eddc5425
 ```
 
 ## Concept

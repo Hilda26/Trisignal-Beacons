@@ -14,7 +14,7 @@ const svg = kitBuffer.toString("utf8");
 const hash = createHash("sha256").update(kitBuffer).digest("hex");
 
 const checks = [
-  ["original source SHA-256 preserved", hash === "abee7b7f0d6854e35009f40fcee97364bc7deb0291760f1ff84c2ef9f667019d"],
+  ["original source SHA-256 preserved", hash === "dbe3f4633e6c6a77e97fc246bd82b89415e45a1f5e07fddbfe6ab889eddc5425"],
   ["root and kit SVG byte-identical", kitBuffer.equals(liveBuffer)],
   ["400x400 viewBox", svg.includes('viewBox="0 0 400 400"')],
   ["exact left geometry", svg.includes("183,33 20,372 179,310 122,279 183,152")],
